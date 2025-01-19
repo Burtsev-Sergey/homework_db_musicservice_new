@@ -41,11 +41,9 @@ GROUP BY g.id
 ORDER BY g.genre; 
 
 -- Вывод количества треков, вошедших в альбомы 2019–2020 годов.
-SELECT a.album, COUNT(t.id) AS track_count FROM album AS a
+SELECT COUNT(t.id) AS track_count FROM album AS a
 LEFT JOIN track AS t ON a.id = t.album_id
-WHERE a.year_release BETWEEN '2019' AND '2020'
-GROUP BY a.id, a.album
-ORDER BY a.year_release;
+WHERE a.year_release BETWEEN '2019' AND '2020';
 
 -- Вывод средней продолжительности треков по каждому альбому.
 SELECT a.album AS album_name, AVG(t.sound_time) AS average_duration FROM album a
@@ -69,3 +67,4 @@ JOIN album a ON t.album_id = a.id
 JOIN album_singer asp ON a.id = asp.album_id
 JOIN singer s ON asp.singer_id = s.id
 WHERE s.name = 'Валерий Кипелов';
+
