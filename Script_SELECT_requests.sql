@@ -67,4 +67,3 @@ JOIN album a ON t.album_id = a.id
 JOIN album_singer asp ON a.id = asp.album_id
 JOIN singer s ON asp.singer_id = s.id
 WHERE s.name = 'Валерий Кипелов';
-
